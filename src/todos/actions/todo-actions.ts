@@ -27,9 +27,8 @@ export const toggleTodo = async( id: string, complete: boolean ): Promise<Todo> 
     throw `Todo con id ${ id } no encontrado`;
   }
 
-  const updatedTodo = await prisma.todo.update({ where: {id }, data:{ complete }});
+  const updatedTodo = await prisma.todo.update({ where: { id }, data:{ complete }});
   revalidatePath('/dashboard/server-todos');
-
   return updatedTodo;
 
 }
