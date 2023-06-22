@@ -23,7 +23,7 @@ export const TabBar = ({ tabOptions = [1,2,3,4], currentTab = 1 }: Props ) => {
   return (
     <div className={`
         grid w-full space-x-2 rounded-xl bg-gray-200 p-2
-        grid-cols-${tabOptions.length}
+        grid-cols-4
       `}>
 
       {
