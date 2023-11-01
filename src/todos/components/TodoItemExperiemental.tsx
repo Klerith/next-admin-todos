@@ -1,6 +1,6 @@
 'use client';
 
-import { experimental_useOptimistic as useOptimistic } from 'react'
+import { useOptimistic, startTransition } from 'react'
 
 import { Todo } from "@prisma/client";
 
@@ -23,8 +23,10 @@ export const TodoItemExperimental = ({ todo, toggleTodo }: Props) => {
 
 
   const onToggleTodo = async() => {
-    toggleOptimistic( !todoOptimistic.complete );
+    
     try {
+      startTransition( () => toggleOptimistic( !todoOptimistic.complete ) );
+      // toggleOptimistic( !todoOptimistic.complete );
       await toggleTodo(todoOptimistic.id, !todoOptimistic.complete);
       
     } catch (error) {
