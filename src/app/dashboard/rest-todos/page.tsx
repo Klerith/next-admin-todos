@@ -1,3 +1,5 @@
+export const dynamic = 'forde-dynamic';
+
 import prisma from "@/lib/prisma";
 import { NewTodo, TodosGrid } from "@/todos";
 
