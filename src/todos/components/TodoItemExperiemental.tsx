@@ -1,6 +1,6 @@
 'use client';
 
-import { experimental_useOptimistic as useOptimistic } from 'react'
+import { useOptimistic } from 'react'
 
 import { Todo } from "@prisma/client";
 
